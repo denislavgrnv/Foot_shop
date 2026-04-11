@@ -13,8 +13,8 @@ body {
 /* Header и Навигация */
 header {
     background-color: #ffffff;
-    padding: 20px 5%;
     display: flex;
+    padding: 10px 5%;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -45,6 +45,7 @@ nav ul li {
 }
 
 nav ul li a {
+    font-size: 1.3rem;
     text-decoration: none;
     color: #333;
     font-weight: bold;
@@ -345,4 +346,24 @@ nav ul li a.active {
 .stock-info button {
     background-color: #3498db;
     font-size: 11pt; /* Спазване на размера на шрифта [cite: 118] */
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#logo {
+    /* Регулирай тези стойности, за да постигнеш желания размер */
+    width: 250px;
+    height: auto; /* Запазва пропорциите на изображението */
+
+    /* Допълнителна стилизация за модерна визия */
+    transition: transform 0.3s ease; /* Плавно уголемяване */
+    cursor: pointer;
+}
+
+#logo:hover {
+    transform: scale(1.1); /* Увеличава логото с 10% при посочване */
 }
