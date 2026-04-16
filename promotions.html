@@ -1,78 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог - ShoesMaster</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header>
-        <div id="logo-container">
-            <a href="index.html">
-                <img src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg" alt="shoeshop лого" id="logo">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="promotions.html">Промоции</a></li>
-                <li><a href="about.html">За нас</a></li>
-                <li><a href="male.html">Мъжки</a></li>
-                <li><a href="female.html">Женски</a></li>
-                <li><a href="child.html">Детски</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="catalog-header">
-            <h2>Нашите ТОП Промоции</h2>
-            <p>Изберете най-доброто за вашите крака.</p>
-        </section>
-
-        <section class="product-grid">
-            <div class="product-card">
-                <img src="./photos/FB2207-001_01.webp" alt="Nike Air Max">
-                <h3>Nike Air Max</h3>
-                <p class="category">Спортни обувки</p>
-                <p class="price">240.00 лв.</p>
-                <a href="order.html" class="buy-btn">Купи сега</a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Каталог - ShoesMaster</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <div id="logo-container">
+                <a href="index.html">
+                    <img
+                        src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg"
+                        alt="shoeshop лого"
+                        id="logo"
+                    />
+                </a>
             </div>
+            <nav>
+                <div id="menu-icon" onclick="toggleMenu()">☰</div>
 
-            <div class="product-card">
-                <img src="./photos/maratonki-nike-air-vapormax-flyknit-3-aj6900-004-800x800.jpg" alt="Adidas Ultraboost">
-                <h3>Adidas Ultraboost</h3>
-                <p class="category">Бягане</p>
-                <p class="price">190.00 лв.</p>
-                <a href="order.html" class="buy-btn">Купи сега</a>
+                <ul id="nav-links">
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="promotions.html">Промоции</a></li>
+                    <li><a href="about.html">За нас</a></li>
+                    <li><a href="male.html">Мъжки</a></li>
+                    <li><a href="female.html">Женски</a></li>
+                    <li><a href="child.html">Детски</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="catalog-header">
+                <h2>Нашите ТОП Промоции</h2>
+                <p>Изберете най-доброто за вашите крака.</p>
+            </section>
+
+            <section class="product-grid">
+                <div class="product-card">
+                    <img src="./photos/FB2207-001_01.webp" alt="Nike Air Max" />
+                    <h3>Nike Air Max</h3>
+                    <p class="category">Спортни обувки</p>
+                    <p class="price">240.00 лв.</p>
+                    <a href="order.html" class="buy-btn">Купи сега</a>
+                </div>
+
+                <div class="product-card">
+                    <img
+                        src="./photos/maratonki-nike-air-vapormax-flyknit-3-aj6900-004-800x800.jpg"
+                        alt="Adidas Ultraboost"
+                    />
+                    <h3>Adidas Ultraboost</h3>
+                    <p class="category">Бягане</p>
+                    <p class="price">190.00 лв.</p>
+                    <a href="order.html" class="buy-btn">Купи сега</a>
+                </div>
+
+                <div class="product-card">
+                    <img
+                        src="./photos/maratonki_nike_air_max_tw_nn_sportfit_bg_001.jpg"
+                        alt="Classic Leather"
+                    />
+                    <h3>Classic Leather</h3>
+                    <p class="category">Ежедневни</p>
+                    <p class="price">150.00 лв.</p>
+                    <a href="order.html" class="buy-btn">Купи сега</a>
+                </div>
+
+                <div class="product-card">
+                    <img
+                        src="./photos/nike_air_beta_wht__pics.jpg"
+                        alt="Puma Suede"
+                    />
+                    <h3>Puma Suede</h3>
+                    <p class="category">Стрийт стил</p>
+                    <p class="price">130.00 лв.</p>
+                    <a href="order.html" class="buy-btn">Купи сега</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <p>
+                    Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456
+                </p>
+                <p>&copy; 2026 ShoesMaster. Всички права запазени.</p>
             </div>
+        </footer>
+    </body>
 
-            <div class="product-card">
-                <img src="./photos/maratonki_nike_air_max_tw_nn_sportfit_bg_001.jpg" alt="Classic Leather">
-                <h3>Classic Leather</h3>
-                <p class="category">Ежедневни</p>
-                <p class="price">150.00 лв.</p>
-                <a href="order.html" class="buy-btn">Купи сега</a>
-            </div>
-
-            <div class="product-card">
-                <img src="./photos/nike_air_beta_wht__pics.jpg" alt="Puma Suede">
-                <h3>Puma Suede</h3>
-                <p class="category">Стрийт стил</p>
-                <p class="price">130.00 лв.</p>
-                <a href="order.html" class="buy-btn">Купи сега</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-info">
-            <p>Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456</p>
-            <p>&copy; 2026 ShoesMaster. Всички права запазени.</p>
-        </div>
-    </footer>
-
-</body>
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("nav-links");
+            if (x.className === "") {
+                x.className = "active";
+            } else {
+                x.className = "";
+            }
+        }
+    </script>
 </html>

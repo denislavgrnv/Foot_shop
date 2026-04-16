@@ -1,80 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="мъжки обувки, маратонки, официални обувки, цени">
-    <title>Мъжки Обувки - ShoesMaster</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="keywords"
+            content="мъжки обувки, маратонки, официални обувки, цени"
+        />
+        <title>Мъжки Обувки - ShoesMaster</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <div id="logo-container">
+                <a href="index.html">
+                    <img
+                        src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg"
+                        alt="shoeshop лого"
+                        id="logo"
+                    />
+                </a>
+            </div>
+            <nav>
+                <div id="menu-icon" onclick="toggleMenu()">☰</div>
 
-    <header>
-        <div id="logo-container">
-            <a href="index.html">
-                <img src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg" alt="shoeshop лого" id="logo">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="promotions.html">Промоции</a></li>
-                <li><a href="about.html">За нас</a></li>
-                <li><a href="male.html">Мъжки</a></li>
-                <li><a href="female.html">Женски</a></li>
-                <li><a href="child.html">Детски</a></li>
-            </ul>
-        </nav>
-    </header>
+                <ul id="nav-links">
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="promotions.html">Промоции</a></li>
+                    <li><a href="about.html">За нас</a></li>
+                    <li><a href="male.html">Мъжки</a></li>
+                    <li><a href="female.html">Женски</a></li>
+                    <li><a href="child.html">Детски</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-        <section class="category-banner mens-banner">
-            <h2>Мъжка Колекция</h2>
-            <p>Стил и здравина във всяка стъпка.</p>
-        </section>
+        <main>
+            <section class="category-banner mens-banner">
+                <h2>Мъжка Колекция</h2>
+                <p>Стил и здравина във всяка стъпка.</p>
+            </section>
 
-        <div class="filter-bar">
-            <span>Сортиране по: </span>
-            <select id="sort-shoes" onchange="sortMsg()"> <option value="price-asc">Цена: възходяща</option>
-                <option value="price-desc">Цена: низходяща</option>
-            </select>
-        </div>
-
-        <section class="product-grid">
-            <div class="product-card">
-                <div class="badge">Ново</div>
-                <img src="/photos/FB2207-001_01.webp" alt="Мъжки маратонки">
-                <h3>Nike Revolution 6</h3>
-                <p class="price">145.00 лв.</p>
-                <a href="order.html" class="buy-btn">Преглед</a>
+            <div class="filter-bar">
+                <span>Сортиране по:</span>
+                <select id="sort-shoes" onchange="sortMsg()">
+                    <option value="price-asc">Цена: възходяща</option>
+                    <option value="price-desc">Цена: низходяща</option>
+                </select>
             </div>
 
-            <div class="product-card">
-                <img src="/photos/maratonki-nike-air-vapormax-flyknit-3-aj6900-004-800x800.jpg" alt="Официални обувки">
-                <h3>Официални обувки Oxford</h3>
-                <p class="price">189.00 лв.</p>
-                <a href="order.html" class="buy-btn">Преглед</a>
+            <section class="product-grid" id="product-grid">
+                <div class="product-card">
+                    <div class="badge">Ново</div>
+                    <img
+                        src="/photos/FB2207-001_01.webp"
+                        alt="Мъжки маратонки"
+                    />
+                    <h3>Nike Revolution 6</h3>
+                    <p class="price">145.00 лв.</p>
+                    <a href="order.html" class="buy-btn">Преглед</a>
+                </div>
+
+                <div class="product-card">
+                    <img
+                        src="/photos/maratonki-nike-air-vapormax-flyknit-3-aj6900-004-800x800.jpg"
+                        alt="Официални обувки"
+                    />
+                    <h3>Официални обувки Oxford</h3>
+                    <p class="price">189.00 лв.</p>
+                    <a href="order.html" class="buy-btn">Преглед</a>
+                </div>
+
+                <div class="product-card">
+                    <img
+                        src="/photos/maratonki_nike_air_max_tw_nn_sportfit_bg_001.jpg"
+                        alt="Зимни боти"
+                    />
+                    <h3>Зимни боти Timber</h3>
+                    <p class="price">220.00 лв.</p>
+                    <a href="order.html" class="buy-btn">Преглед</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <p>
+                    Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456
+                </p>
+                <p>&copy; 2026 ShoesMaster. Всички права запазени.</p>
             </div>
+        </footer>
 
-            <div class="product-card">
-                <img src="/photos/maratonki_nike_air_max_tw_nn_sportfit_bg_001.jpg" alt="Зимни боти">
-                <h3>Зимни боти Timber</h3>
-                <p class="price">220.00 лв.</p>
-                <a href="order.html" class="buy-btn">Преглед</a>
-            </div>
-        </section>
-    </main>
+        <script>
+            function sortMsg() {
+                const grid = document.getElementById("product-grid");
+                const cards = Array.from(
+                    grid.getElementsByClassName("product-card"),
+                );
+                const sortValue = document.getElementById("sort-shoes").value;
 
-    <footer>
-        <div class="footer-info">
-            <p>Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456</p> <p>&copy; 2026 ShoesMaster. Всички права запазени.</p>
-        </div>
-    </footer>
+                cards.sort((a, b) => {
+                    // Взимаме цената от параграфа с клас 'price' и махаме " лв."
+                    const priceA = parseFloat(
+                        a.querySelector(".price").innerText.replace(" лв.", ""),
+                    );
+                    const priceB = parseFloat(
+                        b.querySelector(".price").innerText.replace(" лв.", ""),
+                    );
 
-    <script>
-        function sortMsg() {
-            console.log("Сортирането е активирано.");
-            // Това може да бъде втория ти задължителен скрипт
-        }
-    </script>
-</body>
+                    if (sortValue === "price-asc") {
+                        return priceA - priceB; // Възходяща
+                    } else {
+                        return priceB - priceA; // Низходяща
+                    }
+                });
+
+                // Изчистваме грида и вмъкваме подредените карти с лека анимация
+                grid.innerHTML = "";
+                cards.forEach((card) => {
+                    grid.appendChild(card);
+                    card.style.animation = "fadeIn 0.5s"; // Добавя ефект при пренареждане
+                });
+            }
+            function toggleMenu() {
+                var x = document.getElementById("nav-links");
+                if (x.className === "") {
+                    x.className = "active";
+                } else {
+                    x.className = "";
+                }
+            }
+        </script>
+    </body>
 </html>

@@ -1,80 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="женски обувки, токчета, маратонки, дамска мода">
-    <title>Дамски Обувки - ShoesMaster</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="keywords"
+            content="женски обувки, токчета, маратонки, дамска мода"
+        />
+        <title>Дамски Обувки - ShoesMaster</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <div id="logo-container">
+                <a href="index.html">
+                    <img
+                        src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg"
+                        alt="shoeshop лого"
+                        id="logo"
+                    />
+                </a>
+            </div>
+            <nav>
+                <div id="menu-icon" onclick="toggleMenu()">☰</div>
 
-    <header>
-        <div id="logo-container">
-            <a href="index.html">
-                <img src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg" alt="shoeshop лого" id="logo">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="promotions.html">Промоции</a></li>
-                <li><a href="about.html">За нас</a></li>
-                <li><a href="male.html">Мъжки</a></li>
-                <li><a href="female.html">Женски</a></li>
-                <li><a href="child.html">Детски</a></li>
-            </ul>
-        </nav>
-    </header>
+                <ul id="nav-links">
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="promotions.html">Промоции</a></li>
+                    <li><a href="about.html">За нас</a></li>
+                    <li><a href="male.html">Мъжки</a></li>
+                    <li><a href="female.html">Женски</a></li>
+                    <li><a href="child.html">Детски</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-        <section class="category-banner womens-banner">
-            <h2>Дамска Колекция</h2>
-            <p>Елегантност и стил за всеки повод.</p>
-        </section>
+        <main>
+            <section class="category-banner womens-banner">
+                <h2>Дамска Колекция</h2>
+                <p>Елегантност и стил за всеки повод.</p>
+            </section>
 
-        <div class="filter-bar">
-            <span>Категория: </span>
-            <select id="filter-women" onchange="filterAlert()"> <option value="all">Всички</option>
-                <option value="heels">Високи обувки</option>
-                <option value="sneakers">Маратонки</option>
-            </select>
-        </div>
-
-        <section class="product-grid">
-            <div class="product-card">
-                <div class="badge promo">-20%</div>
-                <img src="/photos/nike_air_beta_wht__pics.jpg" alt="Елегантни токчета">
-                <h3>Елегантни токчета "Luna"</h3>
-                <p class="price"><span class="old-price">120.00 лв.</span> 96.00 лв.</p>
-                <a href="order.html" class="buy-btn">Виж детайли</a>
+            <div class="filter-bar">
+                <span>Сортиране по:</span>
+                <select id="sort-shoes" onchange="sortMsg()">
+                    <option value="price-asc">Цена: възходяща</option>
+                    <option value="price-desc">Цена: низходяща</option>
+                </select>
             </div>
 
-            <div class="product-card">
-                <img src="/photos/nike_air_beta_wht__pics.jpg" alt="Дамски маратонки">
-                <h3>Спортни обувки Rose</h3>
-                <p class="price">115.00 лв.</p>
-                <a href="order.html" class="buy-btn">Виж детайли</a>
+            <section class="product-grid" id="product-grid">
+                <div class="product-card">
+                    <div class="badge promo">-20%</div>
+                    <img
+                        src="/photos/nike_air_beta_wht__pics.jpg"
+                        alt="Елегантни токчета"
+                    />
+                    <h3>Елегантни токчета "Luna"</h3>
+                    <p class="price">
+                        <span class="old-price">120.00 лв.</span>
+                        <span class="current-price">96.00 лв.</span>
+                    </p>
+                    <a href="order.html" class="buy-btn">Виж детайли</a>
+                </div>
+
+                <div class="product-card">
+                    <img
+                        src="/photos/nike_air_beta_wht__pics.jpg"
+                        alt="Дамски маратонки"
+                    />
+                    <h3>Спортни обувки Rose</h3>
+                    <p class="price">115.00 лв.</p>
+                    <a href="order.html" class="buy-btn">Виж детайли</a>
+                </div>
+
+                <div class="product-card">
+                    <img
+                        src="/photos/nike_air_beta_wht__pics.jpg"
+                        alt="Пролетни обувки"
+                    />
+                    <h3>Кожени боти Spring</h3>
+                    <p class="price">140.00 лв.</p>
+                    <a href="order.html" class="buy-btn">Виж детайли</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <p>
+                    Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456
+                </p>
+                <p>&copy; 2026 ShoesMaster. Всички права запазени.</p>
             </div>
+        </footer>
 
-            <div class="product-card">
-                <img src="/photos/nike_air_beta_wht__pics.jpg" alt="Пролетни обувки">
-                <h3>Кожени боти Spring</h3>
-                <p class="price">140.00 лв.</p>
-                <a href="order.html" class="buy-btn">Виж детайли</a>
-            </div>
-        </section>
-    </main>
+        <script>
+            function sortMsg() {
+                const grid = document.getElementById("product-grid");
+                const cards = Array.from(
+                    grid.getElementsByClassName("product-card"),
+                );
+                const sortValue = document.getElementById("sort-shoes").value;
 
-    <footer>
-        <div class="footer-info">
-            <p>Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456</p> <p>&copy; 2026 ShoesMaster. Всички права запазени.</p>
-        </div>
-    </footer>
+                cards.sort((a, b) => {
+                    const getPrice = (card) => {
+                        // Търсим първо елемента с новата цена
+                        const currentPriceSpan =
+                            card.querySelector(".current-price");
+                        let priceText;
 
-    <script>
-        function filterAlert() {
-            alert("Филтрирането се обработва...");
-        }
-    </script>
-</body>
+                        if (currentPriceSpan) {
+                            priceText = currentPriceSpan.innerText;
+                        } else {
+                            // Ако няма такъв, взимаме целия текст на параграфа и чистим "лв." и старата цена
+                            priceText = card
+                                .querySelector(".price")
+                                .innerText.split("лв.")[0]
+                                .trim();
+                            // Ако има стара цена, split ще ни даде масив, затова чистим внимателно:
+                            if (priceText.includes(".")) {
+                                const parts = priceText.match(/\d+\.\d+/g);
+                                priceText = parts
+                                    ? parts[parts.length - 1]
+                                    : "0";
+                            }
+                        }
+                        return parseFloat(priceText.replace(",", "."));
+                    };
+
+                    const priceA = getPrice(a);
+                    const priceB = getPrice(b);
+
+                    return sortValue === "price-asc"
+                        ? priceA - priceB
+                        : priceB - priceA;
+                });
+
+                grid.innerHTML = "";
+                cards.forEach((card) => {
+                    grid.appendChild(card);
+                    card.style.animation = "fadeIn 0.5s";
+                });
+            }
+            function toggleMenu() {
+                var x = document.getElementById("nav-links");
+                if (x.className === "") {
+                    x.className = "active";
+                } else {
+                    x.className = "";
+                }
+            }
+        </script>
+    </body>
 </html>

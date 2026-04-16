@@ -1,51 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="обувки, маратонки, магазин, мода"> <title>ShoesMaster - Твоят магазин за обувки</title>
-    <link rel="stylesheet" href="style.css"> </head>
-<body>
-
-    <header>
-        <div id="logo-container">
-            <a href="index.html">
-                <img src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg" alt="shoeshop лого" id="logo">
-            </a>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="promotions.html">Промоции</a></li>
-                <li><a href="about.html">За нас</a></li>
-                <li><a href="male.html">Мъжки</a></li>
-                <li><a href="female.html">Женски</a></li>
-                <li><a href="child.html">Детски</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero-banner">
-            <h2>Нова Колекция 2026</h2>
-            <p>Открий комфорта с нашите нови модели.</p>
-            <button>Виж повече</button> </section>
-
-        <section class="products">
-            <div class="product-card">
-                <img src="./photos/CI7523-009_800_800px.jpg" alt="Спортни обувки">
-                <h3>Спортни обувки Air</h3>
-                <p>Цена: 120 лв.</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="keywords"
+            content="обувки, маратонки, магазин, мода, нови модели"
+        />
+        <title>shoeshop - Твоят магазин за обувки</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <div id="logo-container">
+                <a href="index.html">
+                    <img
+                        src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg"
+                        alt="shoeshop лого"
+                        id="logo"
+                    />
+                </a>
             </div>
+            <nav>
+                <div id="menu-icon" onclick="toggleMenu()">☰</div>
+
+                <ul id="nav-links">
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="promotions.html">Промоции</a></li>
+                    <li><a href="about.html">За нас</a></li>
+                    <li><a href="male.html">Мъжки</a></li>
+                    <li><a href="female.html">Женски</a></li>
+                    <li><a href="child.html">Детски</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="hero-banner">
+                <h2>Нова Колекция 2026</h2>
+                <p>Открий комфорта с нашите промоционални модели.</p>
+                <button onclick="window.location.href = 'promotions.html'">
+                    Виж промоциите
+                </button>
             </section>
-    </main>
 
-    <footer>
-        <div class="footer-info">
-            <p>&copy; 2026 ShoesShop ЕООД. Всички права запазени.</p>
-            <p>Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456</p>
-            <div id="clock"></div> </div>
-    </footer>
+            <section class="latest-models">
+                <h2 style="text-align: center; margin-top: 40px">
+                    Нашите най-нови модели
+                </h2>
+                <div class="products">
+                    <div class="product-card">
+                        <img
+                            src="./photos/CI7523-009_800_800px.jpg"
+                            alt="Спортни обувки Air"
+                        />
+                        <h3>Спортни обувки Air</h3>
+                        <p>Цена: 120 лв.</p>
+                    </div>
 
-</body>
+                    <div class="product-card">
+                        <img
+                            src="./photos/new_model_2.jpg"
+                            alt="Маратонки Speed"
+                        />
+                        <h3>Маратонки Speed 2026</h3>
+                        <p>Цена: 155 лв.</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img
+                            src="./photos/new_model_3.jpg"
+                            alt="Ежедневни обувки Comfort"
+                        />
+                        <h3>Ежедневни обувки Comfort</h3>
+                        <p>Цена: 95 лв.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <p>&copy; 2026 ShoesShop ЕООД. Всички права запазени.</p>
+                <p>
+                    Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456
+                </p>
+                <div id="clock"></div>
+            </div>
+        </footer>
+
+        <script>
+            function toggleMenu() {
+                var x = document.getElementById("nav-links");
+                if (x.className === "") {
+                    x.className = "active";
+                } else {
+                    x.className = "";
+                }
+            }
+        </script>
+    </body>
 </html>

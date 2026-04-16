@@ -1,66 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <title>За нас - ShoesMaster</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>За нас - ShoesMaster</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <div id="logo-container">
+                <a href="index.html">
+                    <img
+                        src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg"
+                        alt="shoeshop лого"
+                        id="logo"
+                    />
+                </a>
+            </div>
+            <nav>
+                <div id="menu-icon" onclick="toggleMenu()">☰</div>
 
-    <header>
-        <div id="logo-container">
-            <a href="index.html">
-                <img src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg" alt="shoeshop лого" id="logo">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="promotions.html">Промоции</a></li>
-                <li><a href="about.html">За нас</a></li>
-                <li><a href="male.html">Мъжки</a></li>
-                <li><a href="female.html">Женски</a></li>
-                <li><a href="child.html">Детски</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="about-section">
-            <div class="about-text">
-                <h2>Нашата История</h2>
-                <p>ShoesMaster започна като малък семеен бизнес през 2026 година във Варна. Нашата мисия е да предоставим на клиентите висококачествени обувки, съчетаващи модерен дизайн и несравним комфорт.</p>
-                
-                <h3>Защо да изберете нас?</h3>
-                <ul>
-                    <li><strong>Качество:</strong> Работим само с доказани производители.</li>
-                    <li><strong>Бързина:</strong> Минимално време за обработка на поръчките.</li>
-                    <li><strong>Експертност:</strong> Нашите консултанти ще ви помогнат да намерите точния размер.</li>
+                <ul id="nav-links">
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="promotions.html">Промоции</a></li>
+                    <li><a href="about.html">За нас</a></li>
+                    <li><a href="male.html">Мъжки</a></li>
+                    <li><a href="female.html">Женски</a></li>
+                    <li><a href="child.html">Детски</a></li>
                 </ul>
-            </div>
-            <div class="about-image">
-                <img src="./photos/6bc33512-2a21-44e2-b880-7413362a718c.jfif" alt="Нашият магазин">
-            </div>
-        </section>
+            </nav>
+        </header>
 
-        <section class="values">
-            <div class="value-box">
-                <h4>Мисия</h4>
-                <p>Да диктуваме тенденциите на пазара за обувки в България.</p>
-            </div>
-            <div class="value-box">
-                <h4>Визия</h4>
-                <p>Да бъдем най-предпочитаният онлайн магазин от младото поколение.</p>
-            </div>
-        </section>
-    </main>
+        <main>
+            <section class="about-hero">
+                <div class="hero-content">
+                    <h1>Нашата История</h1>
+                    <p>
+                        От малък семеен магазин до лидер в онлайн търговията с
+                        обувки.
+                    </p>
+                </div>
+            </section>
 
-    <footer>
-        <div class="footer-info">
-            <p>Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456</p>
-            <p>&copy; 2026 ShoesMaster. Всички права запазени.</p>
-        </div>
-    </footer>
+            <section class="about-detailed">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="text-block animate-left">
+                            <h2>Къде започна всичко?</h2>
+                            <p>
+                                ShoesMaster отвори врати през 2026 г. във Варна
+                                с една проста идея:
+                                <strong>
+                                    всеки заслужава перфектната крачка
+                                </strong>
+                                . Започнахме с едва 20 модела, а днес предлагаме
+                                хиляди решения за мъже, жени и деца.
+                            </p>
+                            <p>
+                                Ние не просто продаваме обувки – ние се грижим
+                                за вашето здраве, комфорт и самочувствие всеки
+                                ден.
+                            </p>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">50 000+</span>
+                                <span class="stat-label">Продажби</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Партньори</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Магазина</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-</body>
+            <section class="values-modern">
+                <h2 class="section-title">Нашите Ценности</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="icon">👟</div>
+                        <h3>Качество</h3>
+                        <p>
+                            Избираме материали, които дишат и издържат на
+                            времето.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <div class="icon">🌍</div>
+                        <h3>Еко-съзнание</h3>
+                        <p>Стремим се към 100% рециклируеми опаковки.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="icon">🤝</div>
+                        <h3>Лоялност</h3>
+                        <p>Всеки клиент е част от нашето голямо семейство.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq">
+                <h2>Често задавани въпроси</h2>
+                <div class="accordion">
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">
+                            Предлагате ли гаранция?
+                            <span>+</span>
+                        </div>
+                        <div class="accordion-body">
+                            Да, всички наши модели имат 30-дневна гаранция за
+                            качество.
+                        </div>
+                    </div>
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">
+                            Къде мога да премеря обувките?
+                            <span>+</span>
+                        </div>
+                        <div class="accordion-body">
+                            Можете да посетите нашите магазини във Варна, София,
+                            Пловдив, Плевен, Стара Загора и Русе.
+                        </div>
+                    </div>
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">
+                            Мога ли да започна работа при вас?
+                            <span>+</span>
+                        </div>
+                        <div class="accordion-body">
+                            Можете да кандидатствате чрез сайта на Jobs.bg за
+                            някоя от нашите позиции.
+                        </div>
+                    </div>
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">
+                            Оригинални ли са продуктите ви?
+                            <span>+</span>
+                        </div>
+                        <div class="accordion-body">
+                            Разбира се! Нашата стока е закупена директно от
+                            производители на водещите марки по света.
+                        </div>
+                    </div>
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">
+                            Мога ли да върна продукт?
+                            <span>+</span>
+                        </div>
+                        <div class="accordion-body">
+                            Разбира се! Можете да върнете продукт в рамките на
+                            30 дни след покупка, ако е с оригинална опаковка.
+                        </div>
+                    </div>
+                    <div class="accordion-item" onclick="toggleAccordion(this)">
+                        <div class="accordion-header">
+                            При връщане на продукт, парите ли се връщат?
+                            <span>+</span>
+                        </div>
+                        <div class="accordion-body">
+                            Да, при връщане на продукт, парите ще бъдат
+                            възстановени по банков път.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <p>
+                    Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456
+                </p>
+                <p>&copy; 2026 ShoesMaster. Всички права запазени.</p>
+            </div>
+        </footer>
+        <script>
+            function toggleAccordion(element) {
+                element.classList.toggle("active");
+                const span = element.querySelector("span");
+                span.innerText = element.classList.contains("active")
+                    ? "-"
+                    : "+";
+            }
+            function toggleMenu() {
+                var x = document.getElementById("nav-links");
+                if (x.className === "") {
+                    x.className = "active";
+                } else {
+                    x.className = "";
+                }
+            }
+        </script>
+    </body>
 </html>
