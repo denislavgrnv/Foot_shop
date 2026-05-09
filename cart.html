@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="bg">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Количка - ShoesMaster</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <div id="logo-container">
+                <a href="index.html">
+                    <img
+                        src="/photos/7cda6384-ac8b-479b-a0a7-8f8cac891851.jpg"
+                        alt="shoeshop лого"
+                        id="logo"
+                    />
+                </a>
+            </div>
+            <nav>
+                <div id="menu-icon" onclick="toggleMenu()">☰</div>
+                <ul id="nav-links">
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="promotions.html">Промоции</a></li>
+                    <li><a href="about.html">За нас</a></li>
+                    <li><a href="male.html">Мъжки</a></li>
+                    <li><a href="female.html">Женски</a></li>
+                    <li><a href="child.html">Детски</a></li>
+                    <li>
+                        <a href="cart.html" class="active">
+                            🛒 Количка
+                            <span id="cart-count" class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="cart-container">
+                <h2 class="section-title">Вашата Количка</h2>
+                <div id="cart-items-container">
+                    <!-- Тук JS ще рендира продуктите -->
+                </div>
+                <div class="cart-summary">
+                    <h3>
+                        Общо за плащане:
+                        <span id="cart-total">0.00</span>
+                        лв.
+                    </h3>
+                    <button
+                        class="buy-btn"
+                        style="width: 100%; margin-top: 20px; padding: 15px"
+                        onclick="window.location.href = 'order.html'"
+                    >
+                        Премини към плащане
+                    </button>
+                    <button
+                        class="remove-btn"
+                        style="width: 100%; margin-top: 10px"
+                        onclick="clearCart()"
+                    >
+                        Изчисти количката
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <p>
+                    Контакти: гр. Варна, ул. "Студентска" 1 | Тел: 0888 123 456
+                </p>
+                <p>&copy; 2026 ShoesMaster. Всички права запазени.</p>
+            </div>
+        </footer>
+
+        <!-- Скриптът за количката -->
+        <script>
+            function loadCartPage() {
+                const cart =
+                    JSON.parse(localStorage.getItem("shoeshop_cart")) || [];
+                const container = document.getElementById(
+                    "cart-items-container",
+                );
+                const totalSpan = document.getElementById("cart-total");
+
+                container.innerHTML = "";
+                let total = 0;
+
+                if (cart.length === 0) {
+                    container.innerHTML =
+                        "<p style='text-align:center;'>Количката е празна. Разгледайте нашите продукти!</p>";
+                } else {
+                    cart.forEach((item, index) => {
+                        total += parseFloat(item.price);
+                        container.innerHTML += `
+                        <div class="cart-item">
+                            <img src="${item.imgUrl}" alt="${item.name}">
+                            <div class="cart-item-details">
+                                <h3>${item.name}</h3>
+                                <p class="price">${item.price} лв.</p>
+                            </div>
+                            <button class="remove-btn" onclick="removeItem(${index})">X</button>
+                        </div>
+                    `;
+                    });
+                }
+                totalSpan.innerText = total.toFixed(2);
+                updateCartCount();
+            }
+
+            function removeItem(index) {
+                let cart =
+                    JSON.parse(localStorage.getItem("shoeshop_cart")) || [];
+                cart.splice(index, 1);
+                localStorage.setItem("shoeshop_cart", JSON.stringify(cart));
+                loadCartPage();
+            }
+
+            function clearCart() {
+                localStorage.removeItem("shoeshop_cart");
+                loadCartPage();
+            }
+
+            // Зареждаме продуктите при отваряне на страницата
+            window.onload = loadCartPage;
+        </script>
+    </body>
+</html>

@@ -31,17 +31,87 @@
                     <li><a href="male.html">Мъжки</a></li>
                     <li><a href="female.html">Женски</a></li>
                     <li><a href="child.html">Детски</a></li>
+                    <li>
+                        <a href="cart.html">
+                            🛒 Количка
+                            <span id="cart-count" class="cart-count">0</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <section id="hero-banner">
-                <h2>Нова Колекция 2026</h2>
-                <p>Открий комфорта с нашите промоционални модели.</p>
-                <button onclick="window.location.href = 'promotions.html'">
-                    Виж промоциите
-                </button>
+            <section class="slider-container">
+                <!-- Слайд 1 -->
+                <div class="slide fade" style="display: block">
+                    <div class="slide-content">
+                        <h2>Нова Колекция 2026</h2>
+                        <p>Открий комфорта с нашите промоционални модели.</p>
+                        <button
+                            onclick="window.location.href = 'promotions.html'"
+                        >
+                            Виж промоциите
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Слайд 2 -->
+                <div
+                    class="slide fade"
+                    style="
+                        display: none;
+                        background:
+                            linear-gradient(
+                                rgba(0, 0, 0, 0.5),
+                                rgba(0, 0, 0, 0.5)
+                            ),
+                            url(&quot;mens-bg.jpg&quot;) no-repeat center
+                                center/cover;
+                    "
+                >
+                    <div class="slide-content">
+                        <h2>Мъжки Спортни Обувки</h2>
+                        <p>Здравина и стил за всяка твоя стъпка.</p>
+                        <button onclick="window.location.href = 'male.html'">
+                            Пазарувай Мъжки
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Слайд 3 -->
+                <div
+                    class="slide fade"
+                    style="
+                        display: none;
+                        background:
+                            linear-gradient(
+                                rgba(0, 0, 0, 0.5),
+                                rgba(0, 0, 0, 0.5)
+                            ),
+                            url(&quot;womens-bg.jpg&quot;) no-repeat center
+                                center/cover;
+                    "
+                >
+                    <div class="slide-content">
+                        <h2>Елегантна Дамска Серия</h2>
+                        <p>Бъди неотразима през новия сезон.</p>
+                        <button onclick="window.location.href = 'female.html'">
+                            Пазарувай Дамски
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Бутони за навигация -->
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+                <!-- Точки (Индикатори) -->
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
             </section>
 
             <section class="latest-models">
@@ -55,7 +125,19 @@
                             alt="Спортни обувки Air"
                         />
                         <h3>Спортни обувки Air</h3>
-                        <p>Цена: 120 лв.</p>
+                        <p class="price">120.00 лв.</p>
+                        <button
+                            class="buy-btn"
+                            onclick="
+                                addToCart(
+                                    'Спортни обувки Air',
+                                    120.0,
+                                    './photos/CI7523-009_800_800px.jpg',
+                                )
+                            "
+                        >
+                            Добави в количката
+                        </button>
                     </div>
 
                     <div class="product-card">
@@ -64,7 +146,19 @@
                             alt="Маратонки Speed"
                         />
                         <h3>Маратонки Speed 2026</h3>
-                        <p>Цена: 155 лв.</p>
+                        <p class="price">155.00 лв.</p>
+                        <button
+                            class="buy-btn"
+                            onclick="
+                                addToCart(
+                                    'Маратонки Speed 2026',
+                                    155.0,
+                                    './photos/new_model_2.jpg',
+                                )
+                            "
+                        >
+                            Добави в количката
+                        </button>
                     </div>
 
                     <div class="product-card">
@@ -73,7 +167,19 @@
                             alt="Ежедневни обувки Comfort"
                         />
                         <h3>Ежедневни обувки Comfort</h3>
-                        <p>Цена: 95 лв.</p>
+                        <p class="price">95.00 лв.</p>
+                        <button
+                            class="buy-btn"
+                            onclick="
+                                addToCart(
+                                    'Ежедневни обувки Comfort',
+                                    95.0,
+                                    './photos/new_model_3.jpg',
+                                )
+                            "
+                        >
+                            Добави в количката
+                        </button>
                     </div>
                 </div>
             </section>
@@ -98,6 +204,68 @@
                     x.className = "";
                 }
             }
+            let slideIndex = 1;
+            let slideInterval;
+
+            // Инициализиране на слайдера
+            function initSlider() {
+                showSlides(slideIndex);
+                // Автоматично сменяне на 5 секунди
+                slideInterval = setInterval(function () {
+                    changeSlide(1);
+                }, 5000);
+            }
+
+            // Ръчна смяна на слайд (Стрелки)
+            function changeSlide(n) {
+                clearInterval(slideInterval); // Спираме таймера при ръчно цъкане
+                showSlides((slideIndex += n));
+                slideInterval = setInterval(function () {
+                    changeSlide(1);
+                }, 5000); // Пускаме го пак
+            }
+
+            // Цъкане на конкретна точка
+            function currentSlide(n) {
+                clearInterval(slideInterval);
+                showSlides((slideIndex = n));
+                slideInterval = setInterval(function () {
+                    changeSlide(1);
+                }, 5000);
+            }
+
+            // Основна функция за визуализация
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("slide");
+                let dots = document.getElementsByClassName("dot");
+
+                if (n > slides.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
+                }
+
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(
+                        " active",
+                        "",
+                    );
+                }
+
+                slides[slideIndex - 1].style.display = "flex";
+                dots[slideIndex - 1].className += " active";
+            }
+
+            // Стартиране, когато страницата зареди
+            document.addEventListener("DOMContentLoaded", function () {
+                updateCartCount(); // Запазваме логиката на количката
+                initSlider(); // Стартираме слайдера
+            });
         </script>
     </body>
 </html>

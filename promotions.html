@@ -27,6 +27,12 @@
                     <li><a href="male.html">Мъжки</a></li>
                     <li><a href="female.html">Женски</a></li>
                     <li><a href="child.html">Детски</a></li>
+                    <li>
+                        <a href="cart.html">
+                            🛒 Количка
+                            <span id="cart-count" class="cart-count">0</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -43,7 +49,18 @@
                     <h3>Nike Air Max</h3>
                     <p class="category">Спортни обувки</p>
                     <p class="price">240.00 лв.</p>
-                    <a href="order.html" class="buy-btn">Купи сега</a>
+                    <button
+                        class="buy-btn"
+                        onclick="
+                            addToCart(
+                                'Nike Revolution 6',
+                                145.0,
+                                '/photos/FB2207-001_01.webp',
+                            )
+                        "
+                    >
+                        Добави в количката
+                    </button>
                 </div>
 
                 <div class="product-card">
@@ -54,7 +71,18 @@
                     <h3>Adidas Ultraboost</h3>
                     <p class="category">Бягане</p>
                     <p class="price">190.00 лв.</p>
-                    <a href="order.html" class="buy-btn">Купи сега</a>
+                    <button
+                        class="buy-btn"
+                        onclick="
+                            addToCart(
+                                'Nike Revolution 6',
+                                145.0,
+                                '/photos/FB2207-001_01.webp',
+                            )
+                        "
+                    >
+                        Добави в количката
+                    </button>
                 </div>
 
                 <div class="product-card">
@@ -65,7 +93,18 @@
                     <h3>Classic Leather</h3>
                     <p class="category">Ежедневни</p>
                     <p class="price">150.00 лв.</p>
-                    <a href="order.html" class="buy-btn">Купи сега</a>
+                    <button
+                        class="buy-btn"
+                        onclick="
+                            addToCart(
+                                'Nike Revolution 6',
+                                145.0,
+                                '/photos/FB2207-001_01.webp',
+                            )
+                        "
+                    >
+                        Добави в количката
+                    </button>
                 </div>
 
                 <div class="product-card">
@@ -76,7 +115,18 @@
                     <h3>Puma Suede</h3>
                     <p class="category">Стрийт стил</p>
                     <p class="price">130.00 лв.</p>
-                    <a href="order.html" class="buy-btn">Купи сега</a>
+                    <button
+                        class="buy-btn"
+                        onclick="
+                            addToCart(
+                                'Nike Revolution 6',
+                                145.0,
+                                '/photos/FB2207-001_01.webp',
+                            )
+                        "
+                    >
+                        Добави в количката
+                    </button>
                 </div>
             </section>
         </main>
@@ -100,5 +150,24 @@
                 x.className = "";
             }
         }
+        function addToCart(name, price, imgUrl) {
+            let cart = JSON.parse(localStorage.getItem("shoeshop_cart")) || [];
+            cart.push({ name: name, price: price, imgUrl: imgUrl });
+            localStorage.setItem("shoeshop_cart", JSON.stringify(cart));
+            updateCartCount();
+            alert(`Успешно добавихте "${name}" в количката!`);
+        }
+
+        // Обновяване на брояча в менюто
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem("shoeshop_cart")) || [];
+            let countSpan = document.getElementById("cart-count");
+            if (countSpan) {
+                countSpan.innerText = cart.length;
+            }
+        }
+
+        // Стартираме проверката при зареждане
+        document.addEventListener("DOMContentLoaded", updateCartCount);
     </script>
 </html>
